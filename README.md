@@ -11,6 +11,8 @@
 
 ![alt text](src/assets/game.png)
 
+![alt text](src/assets/game1.png)
+
 ## Team Word: Liên hệ công việc https://profile-forme.cf
 
 ## 1. Nguyễn Tiến Tài ( Maintanin 🚩).
