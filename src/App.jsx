@@ -95,7 +95,7 @@ const Game = () => {
       }}
     >
       <div className="game">
-        <h1 className="game__title">Color Matching</h1>
+        <h1>Game Language Matching</h1>
         {gameState === GAME_STATE.PENDING && (
           <div className="game__button-wrapper">
             <button className="game__button" onClick={startGame}>
