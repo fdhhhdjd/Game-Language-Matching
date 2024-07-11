@@ -58,7 +58,7 @@ const Game = () => {
   const startGame = () => {
     setColors(getRandomColorPairs(8));
     setGameState(GAME_STATE.PLAYING);
-    setTimer(30); // Reset timer to 30 seconds
+    setTimer(40); // Reset timer to 30 seconds
     setSelectedColors([]);
     setMatchedColors([]);
     setSelectedImage("");
