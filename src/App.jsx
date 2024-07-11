@@ -5,8 +5,10 @@ import GAME_STATE from "./constants/game.constants";
 import failSound from "./assets/music/fail.mp3";
 import tickSound from "./assets/music/tick.mp3";
 import clockSound from "./assets/music/clock.mp3";
+import youWin from "./assets/music/win.mp3";
 
 import "./App.css";
+import FireworksComponent from "./components/FireworksComponent";
 
 const Game = () => {
   const [colors, setColors] = useState([]);
@@ -19,12 +21,13 @@ const Game = () => {
   const failAudio = new Audio(failSound);
   const tickAudio = new Audio(tickSound);
   const clockAudio = new Audio(clockSound);
+  const winAudio = new Audio(youWin);
 
   useEffect(() => {
     if (timer === 10) {
       clockAudio.play();
     }
-  }, [timer]);
+  }, [timer, matchedColors, colors.length]);
 
   useEffect(() => {
     let interval = null;
@@ -32,6 +35,13 @@ const Game = () => {
       interval = setInterval(() => {
         setTimer((prevTimer) => prevTimer - 1);
       }, 1000);
+    }
+
+    if (
+      gameState === GAME_STATE.FINISHED &&
+      matchedColors.length === colors.length
+    ) {
+      winAudio.play();
     }
     return () => clearInterval(interval);
   }, [gameState]);
@@ -111,7 +121,21 @@ const Game = () => {
         )}
         {gameState === GAME_STATE.FINISHED &&
           matchedColors.length === colors.length && (
-            <p className="game__timer">You Win!</p>
+            <p
+              className="game__timer"
+              style={{
+                color: "green",
+                fontWeight: "bold",
+              }}
+            >
+              <FireworksComponent />
+              You Win!
+              <div className="game__button-wrapper">
+                <button className="game__button" onClick={startGame}>
+                  Chơi tiếp ^^
+                </button>
+              </div>
+            </p>
           )}
         {gameState === GAME_STATE.FINISHED &&
           matchedColors.length !== colors.length && (
