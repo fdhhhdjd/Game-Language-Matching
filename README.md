@@ -7,7 +7,7 @@
 <a href = "mailto:nguyentientai10@gmail.com"><img src="https://img.icons8.com/fluency/48/000000/send-mass-email.png" alt="License"></a>
 </p>
 
-# Game
+#  Game 
 
 ![alt text](src/assets/game.png)
 
@@ -15,7 +15,7 @@
 
 ## Team Word: Liên hệ công việc https://profile-forme.cf
 
-## 1. Nguyễn Tiến Tài ( Maintanin 🚩).
+## 1. Nguyễn Tiến Tài .
 
 ## Tài Khoản Donate li Cf 🥛,để có động lực code cho anh em tham khảo 😄😄.
 
